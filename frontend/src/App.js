@@ -3,7 +3,16 @@ import "./App.css";
 
 function App() {
   function ask(){
-    console.log("asking question");
+    let message = prompt("What do you want to ask Bolin?");
+    fetch('http://localhost:8000/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
   }
 
   return (
