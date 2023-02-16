@@ -18,4 +18,30 @@ header{
   border: none;
   background-color: transparent;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#talk-button > img{
+  transition: 0.25s transform;
+}
+
+#talk-button > .dot{
+  width: 25px;
+  height: 25px;
+  margin-top: 25px;
+  border-radius: 25px;
+  background-color: #0A5555;
+  opacity: 0;
+  transition: 0.25s opacity;
+}
+
+#talk-button.activeMicrophone > img{
+  transform: rotate(45deg);
+}
+
+#talk-button.activeMicrophone > .dot{
+  opacity: 1;
 }
