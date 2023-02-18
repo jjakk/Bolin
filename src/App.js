@@ -22,7 +22,7 @@ function App() {
 
   function requestAnswer(message){
     fetch(
-      process.env.NODE_ENV === "development" ? "http://localhost:8000/" : "",
+      process.env.NODE_ENV === "development" ? "http://localhost:8000/" : "https://bolin-api.onrender.com",
       {
         method: "POST",
         headers: {
