@@ -20,8 +20,6 @@ function App() {
     }
   }
 
-  console.log();
-
   function requestAnswer(message){
     fetch(
       process.env.NODE_ENV === "development" ? "http://localhost:8000/" : "",
