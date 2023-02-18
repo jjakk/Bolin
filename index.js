@@ -19,7 +19,7 @@ app.use(cors());
 
 app.post('/', async (req, res) => {
     const { message, name, authKey, setupInstructions } = req.body;
-    //if(authKey !== process.env.AUTH_KEY) return res.status(400).send({ message: "Invalid authentication key" });
+    if(authKey !== process.env.AUTH_KEY || !process.env.AUTH_KEY) return res.send({ message: "Invalid authentication key", error: true });
     const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: `
