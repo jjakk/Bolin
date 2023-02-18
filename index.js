@@ -18,11 +18,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/', async (req, res) => {
-    const { message } = req.body;
+    const { message, name, authKey, setupInstructions } = req.body;
+    //if(authKey !== process.env.AUTH_KEY) return res.status(400).send({ message: "Invalid authentication key" });
     const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: `
-            You're name is Bolin. Process the following command:
+            ${setupInstructions}
+            You're name is ${name || "Bolin"}. Process the following command:
             "${message}" 
         `,
         temperature: 0

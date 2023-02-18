@@ -45,3 +45,89 @@ header{
 #talk-button.activeMicrophone > .dot{
   opacity: 1;
 }
+
+#settings{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 40vw;
+  background-color: #516969;
+  overflow: hidden;
+  transition: 0.25s left;
+  color: #9BCACA;
+}
+
+#settings.closed{
+  left: -40vw;
+}
+
+#settings h2,h3{
+  font-weight: normal;
+}
+
+#settings hr{
+  margin: 25px;
+  border: none;
+  border-top: 1px solid #9BCACA;
+}
+
+#settings input{
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #9BCACA;
+  color: #222b2b;
+  font-size: 16px;
+}
+
+#settings input:focus{
+  outline: none;
+}
+
+#settings input::placeholder{
+  color: #6b8b8b;
+}
+
+#settings textarea{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #9BCACA;
+  color: #222b2b;
+  font-size: 16px;
+  width: 80%;
+  height: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: vertical;
+}
+
+#settings textarea:focus{
+  outline: none;
+}
+
+#settings textarea::placeholder{
+  color: #6b8b8b;
+}
+
+#settings-content{
+  margin-top: 50px;
+  text-align: center;
+}
+
+#settings-button{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #516969;
+  font-size: 32px;
+}
+
+#close-settings-button{
+  position: relative;
+  top: 25px;
+  left: 25px;
+  color: #9BCACA;
+  font-size: 32px;
+}
